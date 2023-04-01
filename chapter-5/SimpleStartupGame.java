@@ -25,8 +25,8 @@ public class SimpleStartupGame{
 
 }
 class SimpleStartup{
-    int[] locationCells;
-    int numOfHits;
+    private int[] locationCells;
+    private int numOfHits;
 
     public String checkYourself(int guess){
         String result = "miss";
