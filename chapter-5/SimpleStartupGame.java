@@ -1,20 +1,29 @@
-public class SimpleStartupTestDrive{
+import java.util.Scanner;
+
+public class SimpleStartupGame{
+    
+
     public static void main(String[] args){
-        SimpleStartup dot = new SimpleStartup();
-        int[] loc = {2,3,4};
-        dot.setLocationCells(loc);
-
-        int guess = 2;
-        String result = dot.checkYourself(guess);
-        String testResult = "failed";
-        if(result == "hit"){
-            testResult = "passed";
+        int numOfGuesses = 0;
+        GameHelper helper = new GameHelper();
+        SimpleStartup startup = new SimpleStartup();
+        int randomNum = (int) (Math.random() * 5);
+        int[] numbers = {randomNum, randomNum +1, randomNum + 2};
+        startup.setLocationCells(numbers);
+        boolean isAlive = true;
+        while(isAlive == true){
+            int guess = helper.getUserInput("enter a number");
+            String result = startup.checkYourself(guess);
+            numOfGuesses++;
+            if (result == "kill"){
+                System.out.println("You made " + numOfGuesses + " 1Guesses");
+                isAlive = false;
+            }
         }
-        System.out.print(testResult);
     }
+
+
 }
-
-
 class SimpleStartup{
     int[] locationCells;
     int numOfHits;
@@ -37,6 +46,17 @@ class SimpleStartup{
 
     public void setLocationCells(int[] loc){
         locationCells = loc;
+    }
+    public int getUserInput(String question){
+        return 2;
+    }
+}
+
+class GameHelper{
+    public int getUserInput(String prompt){
+        System.out.print(prompt + ": ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
     }
 }
 
