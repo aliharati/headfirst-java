@@ -93,9 +93,7 @@ class SimpleStartup{
     public void setLocationCells(int[] loc){
         locationCells = loc;
     }
-    public int getUserInput(String question){
-        return 2;
-    }
+    
 }
 
 class GameHelper{
