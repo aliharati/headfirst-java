@@ -19,7 +19,13 @@ public class Jukebox8 {
         System.out.println(songList);
 
         Set<SongV4> songSet = new HashSet<>(songList);
-        System.out.print(songSet);
+        System.out.println(songSet);
+        Set<SongV4> songSet2 = new TreeSet<>(songList);
+        System.out.println(songSet2);
+
+        Set<SongV4> songSet3 = new TreeSet<>((one,two)-> one.getBpm().compareTo(two.getBpm()));
+        songSet3.addAll(songList);
+        System.out.println(songSet3);
     }
 }
 
