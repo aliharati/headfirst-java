@@ -42,5 +42,5 @@ public class MiniMusicPlayer2 {
             ex.printStackTrace();
         }
         return event;
-    }    
+    }
 }
