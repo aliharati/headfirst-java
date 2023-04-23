@@ -22,10 +22,14 @@ public class SimpleGui3 implements ActionListener {
         button2.addActionListener(this);
 
         MyDrawPanel drawPanel = new MyDrawPanel();
+        MyDrawPanel drawPanel2 = new MyDrawPanel();
+        drawPanel2.setPreferredSize(new Dimension(200, 200));
+
 
         frame.getContentPane().add(BorderLayout.CENTER,drawPanel);
+        frame.getContentPane().add(BorderLayout.WEST,drawPanel2);
         frame.getContentPane().add(BorderLayout.SOUTH ,button);
-        frame.getContentPane().add(BorderLayout.EAST ,button2);
+
 
         frame.setSize(400, 400);
         frame.setVisible(true);
@@ -57,7 +61,7 @@ class MyDrawPanel extends JPanel{
         GradientPaint gradient = new GradientPaint(70, 70, startColor, 170, 170, endColor);
         g2d.setPaint(gradient);
         g2d.fillOval(70, 70, 100, 100);
-        g2d.draw3DRect(170, 170, 100, 100, true);
+       
 
     }
 }
